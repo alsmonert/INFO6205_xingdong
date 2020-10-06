@@ -24,11 +24,12 @@ public class UF_HWQUPC_client {
         int count = 0;
         while (!contains(height, n)) {
             Pair pair = randomPair(n);
-            count++;
+            
             if (uf.isConnected(pair.getFirst(), pair.getSecond())) {
                 continue;
             }
             uf.connect(pair.getFirst(), pair.getSecond());
+	    count++;
         }
 
         //assert if n = 6 whether all of point is connected
